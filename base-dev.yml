@@ -26,3 +26,5 @@ eureka:
       defaultZone: http://localhost:6868/eureka
   instance:
     prefer-ip-address: true
+rabbitmq:
+  host: 192.168.1.6
