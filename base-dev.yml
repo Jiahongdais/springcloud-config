@@ -27,4 +27,4 @@ eureka:
   instance:
     prefer-ip-address: true
 sms:
-  ip: 127.0.0.1
+  ip: 192.168.1.6
