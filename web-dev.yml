@@ -1,0 +1,42 @@
+server:
+  port: 9012
+spring:
+  application:
+    name: hk-web
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url: #Eureka客户端与Eureka服务端进行交互的地址
+      defaultZone: http://127.0.0.1:6868/eureka/
+zuul:
+  routes:
+      hk‐gathering: #活动
+        path: /gathering/** #配置请求URL的请求规则
+        serviceId: hk‐gathering #指定Eureka注册中心中的服务id
+      hk‐article: #文章
+        path: /article/** #配置请求URL的请求规则
+        serviceId: hk‐article #指定Eureka注册中心中的服务id
+      hk‐base: #基础
+        path: /base/** #配置请求URL的请求规则
+        serviceId: hk‐base #指定Eureka注册中心中的服务id
+      hk‐friend: #交友
+        path: /friend/** #配置请求URL的请求规则
+        serviceId: hk‐friend #指定Eureka注册中心中的服务id
+      hk‐qa: #问答
+        path: /qa/** #配置请求URL的请求规则
+        serviceId: hk‐qa #指定Eureka注册中心中的服务id
+      hk‐recruit: #招聘
+        path: /recruit/** #配置请求URL的请求规则
+        serviceId: hk‐recruit #指定Eureka注册中心中的服务id
+      hk‐spit: #吐槽
+        path: /spit/** #配置请求URL的请求规则
+        serviceId: hk‐spit #指定Eureka注册中心中的服务id
+      hk‐user: #用户
+        path: /user/** #配置请求URL的请求规则
+        serviceId: hk‐user #指定Eureka注册中心中的服务id
+      hk‐search: #用户
+        path: /search/** #配置请求URL的请求规则
+        serviceId: hk‐search #指定Eureka注册中心中的服务id
